@@ -1,0 +1,273 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY & BACKGROUND
+========================= */
+body {
+  height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("https://wallpaperaccess.com/full/398864.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+.app {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  padding: 26px;
+  width: 340px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+  animation: fadeUp 0.6s ease;
+}
+
+/* =========================
+   HEADER
+========================= */
+header h1 {
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+/* =========================
+   SEARCH
+========================= */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #4a90e2;
+  color: white;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* =========================
+   WEATHER RESULT
+========================= */
+.dashboard {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* =========================
+   MAIN WEATHER CARD
+========================= */
+.main-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.weather-icon {
+  width: 90px;
+  margin: 6px auto;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.temp {
+  font-size: 34px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.feels-like {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* =========================
+   METRIC GRID
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.card span {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.card small {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* =========================
+   AQI CARD
+========================= */
+.aqi-card {
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.aqi-value {
+  font-size: 24px;
+  margin: 6px 0;
+}
+
+/* AQI COLORS */
+.good {
+  background: #2ecc71;
+  color: white;
+}
+
+.fair {
+  background: #f1c40f;
+  color: black;
+}
+
+.moderate {
+  background: #e67e22;
+  color: white;
+}
+
+.poor {
+  background: #e74c3c;
+  color: white;
+}
+
+.very-poor {
+  background: #8e44ad;
+  color: white;
+}
+
+/* =========================
+   LOADING
+========================= */
+.loading {
+  font-weight: bold;
+  text-align: center;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+.forecast-title {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.forecast-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 2px;
+  scrollbar-width: none; /* Firefox */
+}
+
+.forecast-container::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+.forecast-card {
+  min-width: 80px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px 6px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  animation: fadeUp 0.4s ease;
+}
+
+.forecast-card img {
+  width: 40px;
+  margin: 4px auto;
+}
+
+.forecast-card .day {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.temp-range {
+  font-size: 13px;
+  font-weight: 500;
+  opacity: 0.9;
+}
